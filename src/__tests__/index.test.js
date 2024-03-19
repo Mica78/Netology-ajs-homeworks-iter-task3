@@ -1,12 +1,13 @@
 import { canIterate, canIterateElso } from '../index';
 
-test.each([
+const exp = [
   [new Map(), true],
   [new Set(), true],
   [null, false],
   [10, false],
   ['Netology', true],
-])(
+];
+test.each(exp)(
   ('`testing canIterate %s`'),
   (obj, expected) => {
     const res = canIterate(obj);
@@ -14,13 +15,7 @@ test.each([
   },
 );
 
-test.each([
-  [new Map(), true],
-  [new Set(), true],
-  [null, false],
-  [10, false],
-  ['Netology', true],
-])(
+test.each(exp)(
   ('`testing canIterate %s`'),
   (obj, expected) => {
     const res = canIterateElso(obj);
